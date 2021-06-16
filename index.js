@@ -35,7 +35,7 @@ function getFinals(data) {
    return data.filter(item => item.Stage === 'Final') // This filters the data with the condition that that Stage key has a value of 'Final', then we pass in the dataset.
 }
 
-// console.log(getFinals(fifaData))
+console.log(getFinals(fifaData))
 
 
 
@@ -51,7 +51,7 @@ function getYears(data, callback) {
     return years;
 }
 
-console.log(getYears(fifaData, getFinals))
+// console.log(getYears(fifaData, getFinals))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -61,9 +61,29 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
+// function getWinners(data, callback) {
+//     let winners = callback(data).filter(function(item){
+//         if(item['Home Team Goals'] > item["Away Team Goals"]){
+//             return item["Home Team Name"];
+//         }else{
+//             return item["Away Team Name"];
+//         }
+//     }
+// }
+
+
+function getWinners(data, callback) {
+    let winners = callback(data);
+    return data.map(function(item){
+        if(item['Home Team Goals'] > item["Away Team Goals"]){
+            return item['Home Team Name'];
+        }else {
+            item['Away Team Name'];
+        }
+    })
 }
+
+
 
 
 
