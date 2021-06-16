@@ -31,9 +31,13 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
-   /* code here */
+function getFinals(data) {
+   return data.filter(item => item.Stage === 'Final') // This filters the data with the condition that that Stage key has a value of 'Final', then we pass in the dataset.
 }
+
+// console.log(getFinals(fifaData))
+
+
 
 
 
